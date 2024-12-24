@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": "Wireless Headphones",
+    "price": 49.99,
+    "image": "https://via.placeholder.com/150",
+    "category": "Electronics"
+  },
+  {
+    "id": 2,
+    "name": "Smartphone",
+    "price": 699.99,
+    "image": "https://via.placeholder.com/150",
+    "category": "Electronics"
+  },
+  {
+    "id": 3,
+    "name": "Coffee Maker",
+    "price": 89.99,
+    "image": "https://via.placeholder.com/150",
+    "category": "Home Appliances"
+  },
+  {
+    "id": 4,
+    "name": "Electric Kettle",
+    "price": 35.99,
+    "image": "https://via.placeholder.com/150",
+    "category": "Home Appliances"
+  },
+  {
+    "id": 5,
+    "name": "Running Shoes",
+    "price": 59.99,
+    "image": "https://via.placeholder.com/150",
+    "category": "Footwear"
+  },
+  {
+    "id": 6,
+    "name": "Backpack",
+    "price": 39.99,
+    "image": "https://via.placeholder.com/150",
+    "category": "Accessories"
+  },
+  {
+    "id": 7,
+    "name": "Sunglasses",
+    "price": 19.99,
+    "image": "https://via.placeholder.com/150",
+    "category": "Accessories"
+  },
+  {
+    "id": 8,
+    "name": "Gaming Console",
+    "price": 299.99,
+    "image": "https://via.placeholder.com/150",
+    "category": "Electronics"
+  },
+  {
+    "id": 9,
+    "name": "Office Chair",
+    "price": 129.99,
+    "image": "https://via.placeholder.com/150",
+    "category": "Furniture"
+  },
+  {
+    "id": 10,
+    "name": "Desk Lamp",
+    "price": 24.99,
+    "image": "https://via.placeholder.com/150",
+    "category": "Furniture"
+  }
+]

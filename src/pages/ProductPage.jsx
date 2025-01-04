@@ -58,14 +58,15 @@ const ProductPage = () => {
   });
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white p-6">
+    <div className="min-h-screen bg-[#FFDAB9] text-black p-6">
       <header className="mb-6">
         <h1 className="text-4xl font-bold text-center sm:text-left">Products</h1>
       </header>
       <div className="flex flex-col sm:flex-row justify-between items-center mb-6 space-y-4 sm:space-y-0 sm:space-x-4">
-        <ProductFilter filters={filters} onFilterChange={handleFilterChange} />
-        <ProductSort sortOption={sortOption} onSortChange={handleSortChange} />
-      </div>
+  <ProductFilter filters={filters} onFilterChange={handleFilterChange} />
+  <ProductSort sortOption={sortOption} onSortChange={handleSortChange} />
+</div>
+
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {sortedProducts.map((product) => (
           <ProductCard

@@ -1,5 +1,17 @@
 import React, { createContext } from "react";
 import smartphone from "../assets/smarthphone.png";
+import wirelessHeadphone from "../assets/wirelessHeadphone.png";
+import ElectricKettle from "../assets/ElectricKettle.png";
+import CoffeeMaker from "../assets/CoffeeMaker.png";
+import Book from "../assets/Book.png";
+import GamingConsole from "../assets/GamingConsole.png";
+import Laptop from "../assets/Laptop.png";
+import OfficeChair from "../assets/OfficeChair.png";
+import RunningShoes from "../assets/RunningShoes.png";
+import Sunglasses from "../assets/Sunglasses.png";
+import TShirt from "../assets/TShirt.png";
+import Backpack from "../assets/Backpack.png";
+import DeskLamp from "../assets/DeskLamp.png";
 
 export const ProductContext = createContext();
 
@@ -9,7 +21,7 @@ export const ProductProvider = ({ children }) => {
       id: 1,
       name: "Wireless Headphones",
       price: 49.99,
-      image: "https://via.placeholder.com/150",
+      image: wirelessHeadphone,
       category: "Electronics",
     },
     {
@@ -23,56 +35,56 @@ export const ProductProvider = ({ children }) => {
       id: 3,
       name: "Coffee Maker",
       price: 89.99,
-      image: "https://via.placeholder.com/150",
+      image: CoffeeMaker,
       category: "Home Appliances",
     },
     {
       id: 4,
       name: "Electric Kettle",
       price: 35.99,
-      image: "https://via.placeholder.com/150",
+      image: ElectricKettle,
       category: "Home Appliances",
     },
     {
       id: 5,
       name: "Running Shoes",
       price: 59.99,
-      image: "https://via.placeholder.com/150",
+      image: RunningShoes,
       category: "Footwear",
     },
     {
       id: 6,
       name: "Backpack",
       price: 39.99,
-      image: "https://via.placeholder.com/150",
+      image: Backpack,
       category: "Accessories",
     },
     {
       id: 7,
       name: "Sunglasses",
       price: 19.99,
-      image: "https://via.placeholder.com/150",
+      image: Sunglasses,
       category: "Accessories",
     },
     {
       id: 8,
       name: "Gaming Console",
       price: 299.99,
-      image: "https://via.placeholder.com/150",
+      image: GamingConsole,
       category: "Electronics",
     },
     {
       id: 9,
       name: "Office Chair",
       price: 129.99,
-      image: "https://via.placeholder.com/150",
+      image: OfficeChair,
       category: "Furniture",
     },
     {
       id: 10,
       name: "Desk Lamp",
       price: 24.99,
-      image: "https://via.placeholder.com/150",
+      image: DeskLamp,
       category: "Furniture",
     },
     // Add more products as needed
@@ -81,21 +93,21 @@ export const ProductProvider = ({ children }) => {
       name: "Laptop",
       category: "Electronics",
       price: 999,
-      image: "/assets/laptop.jpg",
+      image: Laptop,
     },
     {
       id: 12,
       name: "T-Shirt",
       category: "Clothing",
       price: 19,
-      image: "/assets/tshirt.jpg",
+      image: TShirt,
     },
     {
       id: 13,
       name: "Book",
       category: "Books",
       price: 12,
-      image: "/assets/book.jpg",
+      image: Book,
     },
   ];
 

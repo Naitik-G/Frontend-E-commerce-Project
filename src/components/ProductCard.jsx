@@ -19,7 +19,7 @@ const ProductCard = ({ product }) => {
       <img
         src={product.image}
         alt={product.name}
-        className="w-full h-48 object-cover sm:h-56 md:h-64 lg:h-72 xl:h-80"
+        className="w-full h-48 object-cover sm:h-56 md:h-64 lg:h-64 xl:h-56"
       />
       <div className="p-4">
         <h3 className="text-lg font-semibold text-black">{product.name}</h3>

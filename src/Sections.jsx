@@ -1,7 +1,7 @@
 import React from 'react'
 import HomePage from './pages/HomePage'
 import ProductPage from './pages/ProductPage'
-import Modal from './components/Modal'
+import PopularQuestions from './pages/PopularQuestions'
 
 
 function Sections() {
@@ -9,7 +9,7 @@ function Sections() {
     <>
     <HomePage />
     <ProductPage/>
-    <Modal/>
+    <PopularQuestions/>
    
     </>
   )

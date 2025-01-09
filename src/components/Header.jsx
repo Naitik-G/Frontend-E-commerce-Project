@@ -1,12 +1,20 @@
 import React, { useContext, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
 
 function Header() {
   const { cartItems } = useContext(CartContext);
+  const [searchQuery, setSearchQuery] = useState(""); // State for search query
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate(); // For navigating to the product page
 
   const cartItemCount = cartItems.reduce((total, item) => total + item.quantity, 0);
+
+  const handleSearch = () => {
+    if (searchQuery.trim()) {
+      navigate(`/productpage?search=${searchQuery}`); // Navigate to the product page with search query
+    }
+  };
 
   return (
     <header className="bg-white py-4 px-8 flex justify-between items-center shadow-sm">
@@ -79,23 +87,30 @@ function Header() {
       <div className={`flex items-center space-x-4 ${isOpen ? "hidden" : ""}`}>
         <input
           type="text"
-          placeholder="Type here"
+          placeholder="Search products..."
           className="border border-gray-300 rounded-md px-3 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-pink-200"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
         />
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-5 w-5 text-gray-500 hover:text-gray-700 cursor-pointer"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
+        <button
+          onClick={handleSearch}
+          className="text-gray-500 hover:text-gray-700 cursor-pointer"
         >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-          />
-        </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+            />
+          </svg>
+        </button>
         <div className="rounded-full bg-pink-200 w-8 h-8 flex items-center justify-center text-pink-600">
           A
         </div>

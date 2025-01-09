@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
+import { useLocation } from "react-router-dom";
 import ProductCard from "../components/ProductCard";
 import ProductFilter from "../components/ProductFilter";
 import ProductSort from "../components/ProductSort";
@@ -9,14 +10,16 @@ import { filterProducts } from "../utils/filterProduct.js";
 const ProductPage = () => {
   const { products: contextProducts } = useContext(ProductContext);
   const { addToCart } = useContext(CartContext);
-
   const [products, setProducts] = useState([]);
   const [filters, setFilters] = useState({
     category: { value: "", options: ["Electronics", "Clothing", "Books"] },
   });
   const [sortOption, setSortOption] = useState("");
+  const [searchQuery, setSearchQuery] = useState(""); // New state for search query
   const [currentPage, setCurrentPage] = useState(1);
   const productsPerPage = 9;
+
+  const location = useLocation();
 
   useEffect(() => {
     if (contextProducts.length === 0) {
@@ -28,6 +31,12 @@ const ProductPage = () => {
       setProducts(contextProducts);
     }
   }, [contextProducts]);
+
+  // Extract search query from the URL
+  useEffect(() => {
+    const query = new URLSearchParams(location.search).get("search") || "";
+    setSearchQuery(query);
+  }, [location.search]);
 
   const handleFilterChange = (filterKey, value) => {
     setFilters((prev) => ({
@@ -43,8 +52,12 @@ const ProductPage = () => {
   };
 
   const filteredProducts = products.filter((product) => {
-    if (!filters.category.value) return true;
-    return product.category === filters.category.value;
+    const matchesCategory =
+      !filters.category.value || product.category === filters.category.value;
+    const matchesSearch =
+      !searchQuery ||
+      product.name.toLowerCase().includes(searchQuery.toLowerCase());
+    return matchesCategory && matchesSearch;
   });
 
   const sortedProducts = [...filteredProducts].sort((a, b) => {

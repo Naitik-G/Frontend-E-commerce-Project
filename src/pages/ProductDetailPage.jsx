@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, } from "react-router-dom";
 import { ProductContext } from "../context/ProductContext";
 import { CartContext } from "../context/CartContext";
 import { formatCurrency } from "../utils/formatCurrency";
@@ -7,6 +7,7 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import SuggestionProduct from "../components/SuggestionProduct";
 
+// Defining the ProductDetailPage component
 const ProductDetailPage = () => {
   const { id } = useParams(); // Get the product ID from the URL
   const { products } = useContext(ProductContext); // Fetch products from context
@@ -23,6 +24,7 @@ const ProductDetailPage = () => {
     );
   }
 
+  // Handler function to add the product to the cart
   const handleAddToCart = () => {
     addToCart(product);
     toast.success(`${product.name} added to cart!`, {
@@ -30,6 +32,7 @@ const ProductDetailPage = () => {
     });
   };
 
+  // Get suggested products from the same category
   const suggestedProducts = products.filter(
     (item) => item.category === product.category && item.id !== product.id
   );
@@ -68,4 +71,5 @@ const ProductDetailPage = () => {
   );
 };
 
+// Exporting the ProductDetailPage component
 export default ProductDetailPage;

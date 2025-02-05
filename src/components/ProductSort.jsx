@@ -1,11 +1,14 @@
 import React from "react";
 
+// Defining the ProductSort component
 const ProductSort = ({ sortOption, onSortChange }) => {
   return (
     <div className="flex flex-wrap gap-4 mb-4 bg-[#FFDAB9] p-4 rounded-lg">
+      {/* Commented out label as it might not be necessary */}
       {/* <label htmlFor="sort" className="mr-2 text-sm md:text-base">
         Sort by:
       </label> */}
+      {/* Select dropdown for sort options */}
       <select
         id="sort"
         value={sortOption}
@@ -21,4 +24,5 @@ const ProductSort = ({ sortOption, onSortChange }) => {
   );
 };
 
+// Exporting the ProductSort component
 export default ProductSort;

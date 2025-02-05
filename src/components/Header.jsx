@@ -59,28 +59,30 @@ function Header() {
 
         {/* Navigation Menu */}
         <nav
-          className={`${
-            isOpen ? "flex flex-col mx-60 space-y-4" : "hidden"
-          } md:flex md:flex-row md:space-x-4  text-gray-700 text-sm`}
-        >
-          <NavLink exact to="/" activeClassName="text-pink-600" className="hover:text-gray-900">
-            Home
-          </NavLink>
-          <NavLink to="/productpage" activeClassName="text-pink-600" className="hover:text-gray-900">
-            Product
-          </NavLink>
-          <NavLink to="/cartpage" activeClassName="text-pink-600" className="hover:text-gray-900 relative">
-            Cart
-            {cartItemCount > 0 && (
-              <span className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full h-5 w-5 flex items-center justify-center text-xs">
-                {cartItemCount}
-              </span>
-            )}
-          </NavLink>
-          <NavLink to="/contact" activeClassName="text-pink-600" className="hover:text-gray-900">
-            Contact
-          </NavLink>
-        </nav>
+  className={`${
+    isOpen ? "flex flex-col items-center space-y-4 px-20" : "hidden"
+  } md:flex md:flex-row md:space-x-4 text-gray-700 text-sm`}
+>
+  <NavLink exact to="/" activeClassName="text-pink-600" className="hover:text-gray-900">
+    Home
+  </NavLink>
+  <a href="#productpage" activeClassName="text-pink-600" className="hover:text-gray-900">
+    Product
+  </a>
+  <a href="#popularquestion" activeClassName="text-pink-600" className="hover:text-gray-900">
+    Popular Question
+  </a>
+  <NavLink to="/cartpage" activeClassName="text-pink-600" className="hover:text-gray-900 relative">
+    Cart
+    {cartItemCount > 0 && (
+      <span className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full h-5 w-5 flex items-center justify-center text-xs">
+        {cartItemCount}
+      </span>
+    )}
+  </NavLink>
+ 
+</nav>
+
       </div>
 
       {/* Search Bar and Profile - Hide when isOpen is true */}

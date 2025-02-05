@@ -1,6 +1,8 @@
 import React from "react";
 
+// Defining the CartItem component
 const CartItem = ({ item, onRemove, onQuantityChange }) => {
+  // Destructuring item properties
   const { id, name, price, quantity } = item;
 
   return (
@@ -10,6 +12,7 @@ const CartItem = ({ item, onRemove, onQuantityChange }) => {
         <p className="text-sm text-gray-400">Price: ${price}</p>
       </div>
       <div className="flex items-center mt-4 md:mt-0">
+        {/* Decrease quantity button */}
         <button
           className="px-2 bg-gray-800 text-white rounded disabled:opacity-50"
           onClick={() => onQuantityChange(id, quantity - 1)}
@@ -18,12 +21,14 @@ const CartItem = ({ item, onRemove, onQuantityChange }) => {
           -
         </button>
         <span className="px-4">{quantity}</span>
+        {/* Increase quantity button */}
         <button
           className="px-2 bg-gray-800 text-white rounded"
           onClick={() => onQuantityChange(id, quantity + 1)}
         >
           +
         </button>
+        {/* Remove item button */}
         <button
           className="ml-4 text-red-500"
           onClick={() => onRemove(id)}
@@ -35,4 +40,5 @@ const CartItem = ({ item, onRemove, onQuantityChange }) => {
   );
 };
 
+// Exporting the CartItem component
 export default CartItem;

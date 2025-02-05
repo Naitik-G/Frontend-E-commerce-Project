@@ -1,17 +1,19 @@
-// SuggestionProduct.js
 import React from "react";
 import { Link } from "react-router-dom";
 import { formatCurrency } from "../utils/formatCurrency";
 
+// Defining the SuggestionProduct component
 const SuggestionProduct = ({ suggestedProducts }) => {
+  // Return null if there are no suggested products to display
   if (!suggestedProducts || suggestedProducts.length === 0) {
-    return null; // No suggested products to display
+    return null;
   }
 
   return (
     <div className="mt-8">
       <h2 className="text-xl font-semibold text-white mb-4">You may also like</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        {/* Rendering product cards for each suggested product */}
         {suggestedProducts.map((product) => (
           <div
             key={product.id}
@@ -35,4 +37,5 @@ const SuggestionProduct = ({ suggestedProducts }) => {
   );
 };
 
+// Exporting the SuggestionProduct component
 export default SuggestionProduct;

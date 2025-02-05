@@ -8,8 +8,11 @@ import { CartContext } from "../context/CartContext";
 import { filterProducts } from "../utils/filterProduct.js";
 
 const ProductPage = () => {
+  // Get the products and addToCart function from the context
   const { products: contextProducts } = useContext(ProductContext);
   const { addToCart } = useContext(CartContext);
+
+  // Initialize state for products, filters, sorting option, search query, and current page
   const [products, setProducts] = useState([]);
   const [filters, setFilters] = useState({
     category: { value: "", options: ["Electronics", "Clothing", "Books"] },
@@ -19,8 +22,10 @@ const ProductPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const productsPerPage = 9;
 
+  // Get the current location from react-router
   const location = useLocation();
 
+  // Fetch products data if contextProducts is empty, otherwise use contextProducts
   useEffect(() => {
     if (contextProducts.length === 0) {
       fetch("/data/product.json") // Update the path if necessary
@@ -38,6 +43,7 @@ const ProductPage = () => {
     setSearchQuery(query);
   }, [location.search]);
 
+  // Handle filter changes
   const handleFilterChange = (filterKey, value) => {
     setFilters((prev) => ({
       ...prev,
@@ -46,11 +52,13 @@ const ProductPage = () => {
     setCurrentPage(1); // Reset to the first page when filters change
   };
 
+  // Handle sort option changes
   const handleSortChange = (option) => {
     setSortOption(option);
     setCurrentPage(1); // Reset to the first page when sort option changes
   };
 
+  // Filter products based on the selected category and search query
   const filteredProducts = products.filter((product) => {
     const matchesCategory =
       !filters.category.value || product.category === filters.category.value;
@@ -60,6 +68,7 @@ const ProductPage = () => {
     return matchesCategory && matchesSearch;
   });
 
+  // Sort the filtered products based on the selected sort option
   const sortedProducts = [...filteredProducts].sort((a, b) => {
     if (sortOption === "price-asc") return a.price - b.price;
     if (sortOption === "price-desc") return b.price - a.price;
@@ -68,16 +77,19 @@ const ProductPage = () => {
     return 0;
   });
 
+  // Calculate the start index for the current page
   const startIndex = (currentPage - 1) * productsPerPage;
+  // Get the products to be displayed on the current page
   const visibleProducts = sortedProducts.slice(
     startIndex,
     startIndex + productsPerPage
   );
 
+  // Calculate the total number of pages
   const totalPages = Math.ceil(sortedProducts.length / productsPerPage);
 
   return (
-    <div className="min-h-screen bg-[#FFDAB9] text-black p-6">
+    <div id="productpage" className="min-h-screen bg-[#FFDAB9] text-black p-6">
       <header className="mb-6">
         <h1 className="text-4xl font-bold text-center sm:text-left">Products</h1>
       </header>

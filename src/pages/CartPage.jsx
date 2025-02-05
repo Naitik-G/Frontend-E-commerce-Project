@@ -1,7 +1,9 @@
 import React, { useContext } from "react";
 import { CartContext } from "../context/CartContext";
 
+// Defining the CartPage component
 const CartPage = () => {
+  // Using the CartContext to get cart items
   const { cartItems } = useContext(CartContext);
 
   // Calculate total quantity and total amount
@@ -14,6 +16,7 @@ const CartPage = () => {
   return (
     <div className="p-6 bg-[#FFDAB9] text-black min-h-screen">
       <h1 className="text-3xl font-bold mb-6">Your Cart</h1>
+      {/* Display a message if the cart is empty */}
       {cartItems.length === 0 ? (
         <p className="text-gray-800">Your cart is empty.</p>
       ) : (
@@ -51,4 +54,5 @@ const CartPage = () => {
   );
 };
 
+// Exporting the CartPage component
 export default CartPage;

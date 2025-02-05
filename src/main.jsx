@@ -9,6 +9,7 @@ import CartPage from './pages/CartPage.jsx';
 import ProductPage from './pages/ProductPage.jsx';
 import { CartProvider } from "./context/CartContext";
 import ProductDetailPage from "./pages/ProductDetailPage.jsx";
+import PopularQuestions from "./pages/PopularQuestions.jsx";
 
 // Define the router correctly
 const router = createBrowserRouter([
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       {
         path: '/productpage',
         element: <ProductPage />
+      },
+      {
+        path: '/question',
+        element: <PopularQuestions />
       },
       {
         path: '/product/:id',

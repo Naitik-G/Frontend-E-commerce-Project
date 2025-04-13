@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { useParams, } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { ProductContext } from "../context/ProductContext";
 import { CartContext } from "../context/CartContext";
 import { formatCurrency } from "../utils/formatCurrency";
@@ -18,8 +18,8 @@ const ProductDetailPage = () => {
 
   if (!product) {
     return (
-      <div className="flex items-center justify-center min-h-screen bg-[#FFDAB9] text-black">
-        <p className="text-2xl">Product not found.</p>
+      <div className="flex items-center justify-center min-h-screen bg-[#FFDAB9] text-black px-4">
+        <p className="text-lg sm:text-xl md:text-2xl">Product not found.</p>
       </div>
     );
   }
@@ -38,25 +38,25 @@ const ProductDetailPage = () => {
   );
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-[#FFDAB9] pt-20 pb-10"> {/* Added pt-16 */}
-      <div className="p-6 max-w-4xl w-full bg-[#FFF5EE] rounded-lg shadow-lg">
-        <div className="flex flex-col sm:flex-row">
+    <div className="min-h-screen bg-[#FFDAB9] pt-16 pb-8 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-4xl mx-auto w-full bg-[#FFF5EE] rounded-lg shadow-lg p-4 sm:p-6">
+        <div className="flex flex-col md:flex-row gap-4 md:gap-6">
           <img
             src={product.image}
             alt={product.name}
-            className="w-full sm:w-1/2 object-cover rounded-lg"
+            className="w-full md:w-1/2 h-64 sm:h-80 md:h-96 object-cover rounded-lg"
           />
-          <div className="sm:ml-6 mt-4 sm:mt-0 text-black">
-            <h1 className="text-3xl font-bold">{product.name}</h1>
-            <p className="text-gray-800 mt-2">{formatCurrency(product.price)}</p>
-            <p className="text-gray-700 mt-4">Category: {product.category}</p>
-            <p className="text-gray-700 mt-4">
+          <div className="text-black mt-4 md:mt-0">
+            <h1 className="text-xl sm:text-2xl md:text-3xl font-bold">{product.name}</h1>
+            <p className="text-gray-800 mt-2 text-base sm:text-lg">{formatCurrency(product.price)}</p>
+            <p className="text-gray-700 mt-3 sm:mt-4 text-sm sm:text-base">Category: {product.category}</p>
+            <p className="text-gray-700 mt-3 sm:mt-4 text-sm sm:text-base">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin non
               eros eget magna facilisis consequat.
             </p>
             <button
               onClick={handleAddToCart}
-              className="bg-blue-500 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors duration-300 mt-4"
+              className="bg-blue-500 text-white font-semibold py-1.5 px-3 sm:py-2 sm:px-4 rounded-lg hover:bg-blue-600 transition-colors duration-300 mt-4 text-sm sm:text-base"
             >
               Add to Cart
             </button>

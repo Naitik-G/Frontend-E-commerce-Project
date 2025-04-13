@@ -13,109 +13,109 @@ function HomePage() {
   const [mainImage, setMainImage] = useState(TShirt);
 
   return (
-    <div className="bg-[#FFF5EE] min-h-screen flex flex-col font-sans overflow-hidden">
+    <div className="bg-[#FFF5EE] min-h-screen flex flex-col font-sans">
       {/* Main Content */}
-      <main className="container mx-auto px-8 py-16 flex-grow flex flex-col lg:flex-row">
+      <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16 flex-grow flex flex-col lg:flex-row">
         {/* Left Section */}
-        <div className="lg:w-1/2 lg:pr-16 flex flex-col justify-center text-center lg:text-left">
-          <h1 className="text-5xl font-bold text-pink-500 mb-4">
+        <div className="lg:w-1/2 flex flex-col justify-center text-center lg:text-left mb-8 lg:mb-0">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-pink-500 mb-4 leading-tight">
             e-commerce <br /> Website
           </h1>
-          <p className="text-gray-700 mb-8">SUPPORT LOCAL EVERYTHING</p>
-          <a href="#" className="text-gray-500 hover:text-gray-700 self-center lg:self-start">
+          <p className="text-gray-700 mb-6 text-sm sm:text-base">SUPPORT LOCAL EVERYTHING</p>
+          <a href="#" className="text-gray-500 hover:text-gray-700 self-center lg:self-start text-sm sm:text-base">
             Continue shopping →
           </a>
         </div>
 
         {/* Right Section */}
-        <div className="lg:w-1/2 lg:relative flex-col flex items-center lg:justify-center">
+        <div className="lg:w-1/2 flex flex-col items-center">
           {/* Center content */}
-          <div className="relative w-[400px] h-[400px] mt-10">
+          <div className="relative w-64 sm:w-80 md:w-96 lg:w-[400px] h-64 sm:h-80 md:h-96 lg:h-[400px]">
             <div className="bg-[#FFDAB9] rounded-full absolute inset-0"></div>
             <img
               src={mainImage}
               alt="Main Product"
-              className="absolute inset-0 w-full h-full object-contain z-10 p-12 rounded-full bg-contain bg-no-repeat bg-center"
+              className="absolute inset-0 w-full h-full object-contain z-10 p-8 sm:p-10 lg:p-12 rounded-full"
             />
           </div>
 
           {/* Options */}
-          <div className="grid md:grid-cols-3 grid-cols-2 gap-4 lg:grid-cols-none lg:absolute lg:inset-0 lg:flex lg:justify-center lg:items-center mt-10">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-8 w-full max-w-md sm:max-w-lg lg:max-w-none">
             {/* Option 1 */}
             <div
-              className="lg:absolute lg:-top-14 lg:left-1/2 lg:transform lg:-translate-x-1/2 bg-white lg:rounded-md p-4 shadow-md cursor-pointer flex flex-col items-center"
+              className="bg-white rounded-md p-3 sm:p-4 shadow-md cursor-pointer flex flex-col items-center"
               onClick={() => setMainImage(TShirt)}
             >
-              <span className="text-gray-700">Casual T-Shirt</span>
+              <span className="text-gray-700 text-xs sm:text-sm">Casual T-Shirt</span>
               <img
                 src={TShirt}
                 alt="Casual T-Shirt"
-                className="mt-2 w-20 h-20 rounded-md object-cover"
+                className="mt-2 w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 rounded-md object-cover"
               />
             </div>
 
             {/* Option 2 */}
             <div
-              className="lg:absolute lg:top-1/4 lg:right-[-70px] bg-white rounded-md p-4 shadow-md cursor-pointer flex flex-col items-center"
+              className="bg-white rounded-md p-3 sm:p-4 shadow-md cursor-pointer flex flex-col items-center"
               onClick={() => setMainImage(Backpack)}
             >
-              <span className="text-gray-700">Minimalistic</span>
+              <span className="text-gray-700 text-xs sm:text-sm">Minimalistic</span>
               <img
                 src={Backpack}
                 alt="Minimalistic Backpack"
-                className="mt-2 w-20 h-20 rounded-md object-cover"
+                className="mt-2 w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 rounded-md object-cover"
               />
             </div>
 
             {/* Option 3 */}
             <div
-              className="lg:absolute lg:bottom-1/4 lg:right-[-70px] bg-white rounded-md p-4 shadow-md cursor-pointer flex flex-col items-center"
+              className="bg-white rounded-md p-3 sm:p-4 shadow-md cursor-pointer flex flex-col items-center"
               onClick={() => setMainImage(DeskLamp)}
             >
-              <span className="text-gray-700">¡Super cozy!</span>
+              <span className="text-gray-700 text-xs sm:text-sm">¡Super cozy!</span>
               <img
                 src={DeskLamp}
                 alt="Cozy Desk Lamp"
-                className="mt-2 w-16 h-16 lg:w-20 lg:h-20 rounded-md object-cover"
+                className="mt-2 w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 rounded-md object-cover"
               />
             </div>
 
             {/* Option 4 */}
             <div
-              className="lg:absolute lg:-bottom-14 lg:left-1/2 lg:-translate-y-1/2 lg:-translate-x-1/2 bg-white rounded-md p-4 shadow-md cursor-pointer flex flex-col items-center border-2"
+              className="bg-white rounded-md p-3 sm:p-4 shadow-md cursor-pointer flex flex-col items-center border-2"
               onClick={() => setMainImage(OfficeChair)}
             >
-              <span className="text-gray-700">Stylish Chair</span>
+              <span className="text-gray-700 text-xs sm:text-sm">Stylish Chair</span>
               <img
                 src={OfficeChair}
                 alt="Stylish Chair"
-                className="mt-2 w-16 h-16 lg:w-20 lg:h-20 rounded-md object-cover"
+                className="mt-2 w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 rounded-md object-cover"
               />
             </div>
 
             {/* Option 5 */}
             <div
-              className="lg:absolute lg:bottom-1/4 lg:left-[-70px] bg-white rounded-md p-4 shadow-md cursor-pointer flex flex-col items-center"
+              className="bg-white rounded-md p-3 sm:p-4 shadow-md cursor-pointer flex flex-col items-center"
               onClick={() => setMainImage(RunningShoes)}
             >
-              <span className="text-gray-700">Running Shoes</span>
+              <span className="text-gray-700 text-xs sm:text-sm">Running Shoes</span>
               <img
                 src={RunningShoes}
                 alt="Running Shoes"
-                className="mt-2 w-20 h-20 rounded-md object-cover"
+                className="mt-2 w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 rounded-md object-cover"
               />
             </div>
 
             {/* Option 6 */}
             <div
-              className="lg:absolute lg:top-1/4 lg:left-[-70px] bg-white rounded-md p-4 shadow-md cursor-pointer flex flex-col items-center"
+              className="bg-white rounded-md p-3 sm:p-4 shadow-md cursor-pointer flex flex-col items-center"
               onClick={() => setMainImage(GamingConsole)}
             >
-              <span className="text-gray-700">Gaming Console</span>
+              <span className="text-gray-700 text-xs sm:text-sm">Gaming Console</span>
               <img
                 src={GamingConsole}
                 alt="Gaming Console"
-                className="mt-2 w-20 h-20 rounded-md object-cover"
+                className="mt-2 w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 rounded-md object-cover"
               />
             </div>
           </div>

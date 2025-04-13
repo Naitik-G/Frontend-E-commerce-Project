@@ -7,7 +7,7 @@ const SuggestionProduct = ({ suggestedProducts }) => {
   // Return null if there are no suggested products to display
   if (!suggestedProducts || suggestedProducts.length === 0) {
     return null;
-  }yield
+  }
 
   return (
     <div className="mt-6 sm:mt-8 px-4 sm:px-6 lg:px-8">
